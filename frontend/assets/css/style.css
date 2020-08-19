@@ -1,0 +1,246 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #003E69;
+}
+a:hover {
+    text-decoration: none;
+}
+.header-logo {
+    height: 100px;
+    background-color: #fff;
+    display: block;
+    text-align: center;
+    padding: 10px 0px;
+}
+.header-logo img {
+    height: 100%;
+    margin: 0 auto;
+}
+
+.carousel-caption {
+    top: 30%;
+}
+
+/*navbar*/
+.navbar.pt {
+    background-color: #fff;
+    padding: 0 120px;  
+    border-bottom: 2px solid #c7c7c785;
+}
+.navbar.pt .iconStyle {
+    color: #003E69;
+    font-size: 25px;
+}
+.navbar.pt ul li a {
+    color: #9e9e9e;
+    font-size: 18px;
+    margin-left: 22px;
+}
+.navbar .navbar-brand {
+    width: 180px;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+    margin: 0 12px;
+    font-size: 20px;
+}
+.btn-warning.sippeta {
+    color: #003E69;
+    margin-top: -3px;
+}
+
+/*login*/
+#konten-login {
+    background-color: #003E69;
+    padding: 100px 160px;
+}
+.login {
+    width: 100%;
+    background-color: #fff;
+    padding: 60px 120px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 7px 0px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.24)
+}
+.title-login {
+    color: #003E69;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.login label {
+    color: #003E69;
+    font-size: 22px;
+}
+.form-control.c {
+    background-color: #d8e0e4;
+    padding: 10px 12px;
+    font-size: 22px;
+}
+.btn-warning.sippeta.c {
+    padding: 12px 60px;
+    border-radius: 8px;
+    font-size: 22px;
+    margin-top: 30px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*pengaduan*/
+#konten-pengaduan {
+    background: url(../images/bg-pengaduan.jpg);
+    background-size: cover;
+    padding: 100px 160px;
+}
+.pengaduan {
+    width: 100%;
+    background-color: #003E69;
+    padding: 60px 120px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 7px 0px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.24)
+}
+.title-pengaduan {
+    color: #f6c13e;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.pengaduan label {
+    color: #fff;
+    font-size: 22px;
+}
+.form-control.r {
+    background-color: #fff;
+    padding: 10px 12px;
+    font-size: 22px;
+}
+.btn-warning.sippeta.r {
+    padding: 12px 60px;
+    border-radius: 8px;
+    font-size: 22px;
+    margin-top: 30px;
+    display: table;
+    margin-left: auto;
+}
+
+/*pembayaran*/
+#konten-pembayaran {
+    background-color: #e6e6e6d6;
+    padding: 80px 140px;
+}
+.title-pembayaran {
+    color: #003E69;
+    font-weight: bold;
+}
+.btn-outline-primary.p {
+    display: table;
+    margin-left: auto;
+    border-color: #003E69;
+    color: #003E69;
+    padding: 8px 25px;
+    border-radius: 6px;
+    font-size: 22px;
+}
+.btn-outline-primary.p:hover {
+    display: table;
+    margin-left: auto;
+    background-color: #003E69;
+    color: #fff;
+}
+.line-user {
+    margin:  20px 0px 30px;
+}
+.pembayaran {
+    width: 100%;
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 0px;
+    box-shadow: 7px 7px 7px 0px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.24)
+}
+.infobold {
+    color: #003E69;
+    font-weight: bold;
+}
+
+/*konten index*/
+#konten {
+    padding: 30px;
+    background-color: #e6e6e6d6;
+}
+.title-description {
+    margin-top: 10px;
+    color: #003E69;
+    font-size: 22px;
+    font-weight: bold;
+}
+.description{
+    color: #9E9E9E;
+    font-size: 18px;
+}
+.fanspage {
+    background-color: #fff;
+    padding: 20px 20px 30px;
+}
+.sidebar {
+    color: #003E69;
+}
+.line-sidebar {
+    border-top: 1px solid #003E69;
+}
+
+/*footer*/
+#footer {
+    padding: 30px 5px;
+    background-color: #f6f6f6;
+    color: #9e9e9e;
+    font-size: 18px;
+}
+
+#footer .image-footer {
+    width: 190px;
+    margin-bottom: 20px;
+}
+#footer .af-contact {
+    margin-bottom: 7px;
+}
+#about-footer h4 {
+    font-weight: bold;
+    color: #003E69;
+}
+#about-footer .af-info {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+#about-footer ul li.contact {
+    list-style: none;
+    margin-left: -40px;
+}
+#about-footer ul li.contact a {
+    color: #9e9e9e;
+}
+#about-footer ul li .icon {
+    font-size: 28px;
+    color: #003E69;
+    height: 32px;
+    width: 32px;
+    line-height: 36px;
+    text-align: center;
+    margin-right: 15px;
+}
+#about-footer ul li .icon.fb {
+    margin-right: 24px;
+}
+#about-footer ul li .icon.email {
+    margin-right: 12px;
+}
+.copyright {
+    background-color: #003E69;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+}

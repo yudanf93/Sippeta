@@ -32,7 +32,7 @@ class Login extends CI_Controller {
       $data = array(
         'title' => 'Direktori Profesi Keuangan (DPK)',
         'metades' => 'Direktori Profesi Keuangan (DPK) adalah portal informasi para professional bidang keuangan yang bermanfaat bagi pelaku bisnis untuk menemukan profesi yang dibutuhkan sesuai dengan permasalahan yang dihadapinya. DPK berfungsi mempertemukan antara professional dengan pelaku bisnis.',
-        'isi'   => 'index'
+        'isi'   => 'login'
       );  
       $this->load->view('layout/wrapper', $data, false);
     } else {   
@@ -60,7 +60,7 @@ class Login extends CI_Controller {
       } else {
         $this->session->set_userdata('online',false);
         $this->session->set_flashdata('pesan', '<center><strong> Email dan password tidak cocok... !</strong></center>');
-        redirect(site_url('home'), 'refresh');
+        redirect(site_url('login'), 'refresh');
       }
     }
   }

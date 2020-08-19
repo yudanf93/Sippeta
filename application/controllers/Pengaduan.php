@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Pengaduan extends CI_Controller {
 
 	public function __construct() {   
 		parent::__construct();
@@ -12,11 +12,12 @@ class Home extends CI_Controller {
 		$data = array(
 			'title' => 'Sippeta',
 			'metades' => 'Project based strategy of all focus areas to produce quality and reach your business target stay updated with the latest trends and digital news by reading our articles written by specialists in their industry.',
-			'isi' 	=> 'index'
+			'isi' 	=> 'pengaduan'
 		);
 		$this->load->view("layout/wrapper", $data, false);
 	}
+
 }
 
-/* End of file home.php */
-/* Location: ./application/controllers/home.php */
+/* End of file Pengaduan.php */
+/* Location: ./application/controllers/Pengaduan.php */
