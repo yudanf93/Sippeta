@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2020 at 10:01 AM
+-- Generation Time: Aug 21, 2020 at 10:43 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.35
 
@@ -44,7 +44,8 @@ CREATE TABLE `berkas` (
 --
 
 INSERT INTO `berkas` (`id_berkas`, `file_berkas`, `id_user`, `tgl_berkas`, `nama_berkas`, `status_berkas`, `biaya_berkas`, `kode_pembayaran`) VALUES
-(1, 'cv_ynf.pdf', 1, '2020-08-15 14:30:54', 'Pengajuan Tanah seluas 2000 M', '1', 1500000, 'Qr_Xcqwy');
+(1, 'cv_ynf.pdf', 2, '2020-08-19 09:53:35', 'Pengajuan Tanah seluas 2000 M', '1', 1500000, 'Qr_Xcqwy'),
+(4, 'f4b050548665fea8a0651bdd389d4da8.pdf', 2, '2020-08-21 05:55:06', 'Tanah yang ada di sana ', '2', 0, '-');
 
 -- --------------------------------------------------------
 
@@ -68,7 +69,8 @@ CREATE TABLE `pembayaran` (
 --
 
 INSERT INTO `pembayaran` (`id_pembayaran`, `id_berkas`, `nama_pembayaran`, `bukti_pembayaran`, `nominal_pembayaran`, `tglbayar_pembayaran`, `tgl_pembayaran`, `status_pembayaran`) VALUES
-(1, 1, 'Yuda Fadillah', 'bukti.jpg', 1500000, '2020-08-20', '2020-08-15 14:48:42', '0');
+(1, 1, 'Yuda Fadillah', 'bukti.jpg', 1500000, '2020-08-20', '2020-08-15 14:48:42', '0'),
+(4, 0, 'Alief Fadzli', '231d01c7a0ad88d862eb58904f33154f.jpg', 1500000, '2020-08-22', '2020-08-21 05:59:56', '2');
 
 -- --------------------------------------------------------
 
@@ -79,7 +81,7 @@ INSERT INTO `pembayaran` (`id_pembayaran`, `id_berkas`, `nama_pembayaran`, `bukt
 CREATE TABLE `pengaduan` (
   `id_pengaduan` int(15) NOT NULL,
   `email_pengaduan` varchar(50) NOT NULL,
-  `nohp_pengaduan` int(15) NOT NULL,
+  `nohp_pengaduan` varchar(15) NOT NULL,
   `nama_pengaduan` varchar(50) NOT NULL,
   `pesan_pengaduan` text NOT NULL,
   `balaske_pengaduan` varchar(150) NOT NULL,
@@ -91,7 +93,8 @@ CREATE TABLE `pengaduan` (
 --
 
 INSERT INTO `pengaduan` (`id_pengaduan`, `email_pengaduan`, `nohp_pengaduan`, `nama_pengaduan`, `pesan_pengaduan`, `balaske_pengaduan`, `tgl_pengaduan`) VALUES
-(1, 'emeralda@gmail.com', 89454545, 'Emeralda', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet', '2020-08-16 08:10:52');
+(3, 'Yuda@gmail.com', '2147483647', 'Fadilah Nur', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', '2020-08-19 14:41:16'),
+(4, 'Yuda@gmail.com', '2147483647', 'Fadilah Nur', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n          ?>', '', '2020-08-19 14:42:33');
 
 -- --------------------------------------------------------
 
@@ -116,7 +119,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `nohp_user`, `password_user`, `foto`, `akses_level`, `tgl_user`) VALUES
 (1, 'admin', 'admin@gmail.com', '089674555439', '7488e331b8b64e5794da3fa4eb10ad5d', 'faa35a7971000a17de9842c9d6d6e3a4.png', 'admin', '2020-08-15 05:49:11'),
-(2, 'Yuda Nur Fadillah', 'yuda.fadillah@students.amikom.ac.id', '089674555439', '8cf270792c08bb8dada4ad907137cbb7', 'b57c3cdc6e1ac58ee5a5d5aac66b68b3.png', 'admin', '2020-08-15 08:46:17');
+(2, 'Yuda Nur Fadillah', 'yuda.fadillah@students.amikom.ac.id', '089674555439', 'ba2bee8d4143c15a5fcfd9922ee71e7f', 'b57c3cdc6e1ac58ee5a5d5aac66b68b3.png', 'user', '2020-08-19 07:19:38'),
+(5, 'Alief Fadzli', 'yudafadilah04@gmail.com', '08674555439', '25f9e794323b453885f5181f1b624d0b', 'profil.png', 'user', '2020-08-21 04:26:17');
 
 --
 -- Indexes for dumped tables
@@ -154,25 +158,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `berkas`
 --
 ALTER TABLE `berkas`
-  MODIFY `id_berkas` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_berkas` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pembayaran` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pengaduan`
 --
 ALTER TABLE `pengaduan`
-  MODIFY `id_pengaduan` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pengaduan` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

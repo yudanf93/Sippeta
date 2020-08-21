@@ -42,7 +42,7 @@ class Login extends CI_Controller {
       $check_login  = $this->M_login->login($email, $password);
       // echo "<pre>";
       // print_r($check_login);
-      // exit();
+      // exit();     
       if ($check_login) {
         $this->session->set_userdata('online',true);
         $this->session->set_userdata('email', $email);
@@ -54,7 +54,7 @@ class Login extends CI_Controller {
         if($this->session->userdata('akses_level') == 'admin'){
           redirect(site_url('admin/dashboard'), 'refresh');
         }else if($this->session->userdata('akses_level') == 'user'){
-          redirect(site_url('paket'), 'refresh');
+          redirect(site_url('user/list_pengajuan'), 'refresh');
         }
 
       } else {

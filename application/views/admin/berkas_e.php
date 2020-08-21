@@ -47,6 +47,7 @@
 						<div class="form-group">
 							<label>Status Berkas</label>
 							<select class="custom-select form-control " name="status_berkas">
+								<option value="2" <?php if ($edit->status_berkas==2){echo "selected";} ?>>Pending</option>
 								<option value="1" <?php if ($edit->status_berkas==1){echo "selected";} ?>>Diterima</option>
 								<option value="0" <?php if ($edit->status_berkas==0){echo "selected";} ?>>Ditolak</option>
 							</select>  

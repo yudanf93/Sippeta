@@ -47,6 +47,7 @@
 						<div class="form-group">
 							<label>Status Pembayaran</label>
 							<select class="custom-select form-control " name="status_pembayaran">
+								<option value="2" <?php if ($edit->status_pembayaran==2){echo "selected";} ?>>Proses</option>
 								<option value="1" <?php if ($edit->status_pembayaran==1){echo "selected";} ?>>Diterima</option>
 								<option value="0" <?php if ($edit->status_pembayaran==0){echo "selected";} ?>>Ditolak</option>
 							</select>  

@@ -31,7 +31,7 @@
        		</thead>
        		<tbody>
        			<?php   
-       			$no = 1;
+       			$no = 1;  
        			foreach ($pembayaran as $pembayaran):
        				?>
        				<tr>
@@ -41,12 +41,14 @@
                 <td>Rp. <?php echo number_format($pembayaran->nominal_pembayaran,'0',',',',') ?></td>
                 <td><?php $date=date_create($pembayaran->tglbayar_pembayaran); echo date_format($date, 'd F Y'); ?></td>
                 <td>
-                  <?php if ($pembayaran->status_pembayaran=='0'){ ?>  
-                    <button class="btn btn-sm btn-danger">Ditolak</button>
-                  <?php }else {?>
-                    <button class="btn btn-sm btn-success">Diterima</button>
-                  <?php } ?>
-                </td>
+                <?php if ($pembayaran->status_pembayaran=='2'){ ?>  
+                  <button class="btn btn-sm btn-warning">Proses</button>
+                <?php } else if ($pembayaran->status_pembayaran=='1') { ?>
+                  <button class="btn btn-sm btn-success">Diterima</button>
+                <?php } else { ?>
+                  <button class="btn btn-sm btn-danger">Ditolak</button>
+                <?php } ?>
+              </td>
        					<td>
        						<a href="<?php echo site_url('admin/pembayaran/edit/'.$pembayaran->id_pembayaran); ?>">
        							<button class="btn btn-sm btn-outline-success">Edit</button>

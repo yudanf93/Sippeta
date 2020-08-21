@@ -17,6 +17,17 @@ class M_berkas extends CI_Model {
 		return $query->result();
 	}
 
+	public function pengajuan_user() {
+		$this->db->select('berkas.*, user.* ');   
+		$this->db->from('berkas');
+		$this->db->where('berkas.id_user', $this->session->userdata('id_user'));
+		$this->db->join('user', 'user.id_user = berkas.id_user', 'left');
+		$this->db->order_by('id_berkas', 'DESC');
+		$query  = $this->db->get();
+		return $query->result();
+	}
+
+
 	public function delete($data) {
 		$this->db->where('id_berkas',$data['id']);
 		$this->db->delete('berkas');

@@ -17,6 +17,16 @@ class M_pembayaran extends CI_Model {
 		return $query->result();
 	}
 
+	public function list_pembayaran() {
+		$this->db->select('pembayaran.*, berkas.*, user.* ');   
+		$this->db->from('pembayaran');
+		$this->db->join('berkas', 'berkas.id_berkas = pembayaran.id_berkas', 'left');
+		$this->db->join('user', 'user.id_user = berkas.id_user', 'left');
+		$this->db->order_by('id_pembayaran', 'DESC');
+		$query  = $this->db->get();
+		return $query->result();
+	}
+
 	public function delete($data) {
 		$this->db->where('id_pembayaran',$data['id']);
 		$this->db->delete('pembayaran');
@@ -27,9 +37,10 @@ class M_pembayaran extends CI_Model {
 	}
 
 	public function detail($id_pembayaran) {
-		$this->db->select('pembayaran.*, berkas.* ');   
+		$this->db->select('pembayaran.*, berkas.*, user.email_user as email_user');   
 		$this->db->from('pembayaran');
-		$this->db->join('berkas', 'berkas.id_berkas = pembayaran.id_berkas', 'left');
+		$this->db->join('berkas as berkas', 'berkas.id_berkas = pembayaran.id_berkas', 'left');
+		$this->db->join('user', 'user.id_user = berkas.id_user', 'left');
 		$this->db->where('id_pembayaran', $id_pembayaran);
 		$query  = $this->db->get();
 		return $query->row();

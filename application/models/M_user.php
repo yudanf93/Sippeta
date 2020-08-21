@@ -16,14 +16,22 @@ class M_user extends CI_Model {
 		return $query->row_array();     
 	}
 
-		public function select_user(){
+	public function select_user(){
 		$this->db->select('*');
 		$this->db->from('user');
 		$query =$this->db->get();    
 		return $query->result();     
 	}
 	
-
+	public function pilih_user() {
+		$this->db->select('*');   
+		$this->db->from('user');
+		$this->db->where('id_user', $this->session->userdata('id_user'));
+		$this->db->order_by('id_user', 'DESC');
+		$query  = $this->db->get();
+		return $query->row();
+	}
+	
 	public function delete($data) {
 		$this->db->where('id_user',$data['id']);
 		$this->db->delete('user');

@@ -9,6 +9,16 @@
     <div class="carousel-item active">
       <img class="d-block w-100" src="<?php echo base_url(); ?>frontend/assets/images/slider.jpg" alt="First slide">
       <div class="carousel-caption d-none d-md-block">
+        <?php
+        if ($this->session->flashdata('notifikasi')) {
+          echo "<br>";
+          echo "<div class='alert alert-success alert-dismissible fade show'><center>";
+          echo $this->session->flashdata('notifikasi');
+          echo "</center><button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+          </button></div>";
+        }
+          ?>
         <h2 class="title-slider">SISTEM PELAYANAN PEMELIHARAAN DATA <br> DAN PENDAFTARAN TANAH</h2>
         <a href="#konten"><button type="button" class="btn btn-warning sippeta">Detail</button></a>
       </div>

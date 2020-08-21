@@ -5,7 +5,7 @@ class Berkas extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->load->model('M_berkas');
+		$this->load->model('M_berkas');         
 	}
 
 	public function index() {  
@@ -60,7 +60,7 @@ class Berkas extends CI_Controller {
 				'kode_pembayaran'  =>  $i->post('kode_pembayaran'),
 				'id_berkas'    =>  $id_berkas
 			);
-			$this->session->set_flashdata('notifikasi', '<center>Berhasil Merubah data <strong> Ubah Berkas </strong></center>');
+			// $this->session->set_flashdata('notifikasi', '<center>Berhasil Merubah data <strong> Ubah Berkas </strong></center>');  
 			if ($data['status_berkas']==1) {
 				$this->send_diterima($edit->nama_user, $edit->kode_pembayaran, $edit->biaya_berkas, $edit->email_user);
 				$this->session->set_flashdata('notifikasi', '<center>Berhasil Merubah Data dan Status Berkas Diterima <strong> email berhasil dikirim </strong></center>');
@@ -79,9 +79,9 @@ class Berkas extends CI_Controller {
     $data['kode_pembayaran'] = $kode_pembayaran;
     $data['biaya_berkas'] = $biaya_berkas;
     $data['email_user'] = $email_user;
-    // echo "<pre>";
-    // print_r($this->load->view('admin/email_berkas_diterima',$data,true));
-    // exit();
+    echo "<pre>";
+    print_r($this->load->view('admin/email_berkas_diterima',$data,true));
+    exit();
     $subject  = "Konfirmasi Berkas User SIP PETA";
     $message  = $this->load->view('admin/email_berkas_diterima',$data,true);
     $config   = array(
@@ -108,7 +108,7 @@ class Berkas extends CI_Controller {
       $this->session->set_flashdata('notifikasi', 'Pengiriman Email Gagal');
       // echo $this->email->print_debugger();
       // exit();  
-    }
+    } 
   } 
 
   	public function send_ditolak($nama_user, $email_user) { 
